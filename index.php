@@ -13,11 +13,38 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- Axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <h1>ciao</h1>
-    
+    <div id="app">
+        <div class="mc_wrapper text p-3 p-relative">
+            <header class="d-flex align-items-center">
+            <i class="fa-brands fa-spotify fa-2x" style="color: #18d860;"></i>
+            </header>
+            <main class="container">
+                <div class="row row-cols-3 ">
+                    <div v-for="(disco, index) in dischi" :key="index" class="col p-3">
+                        <div class="card h-100 ms_card text-white">
+                            <img :src="disco.poster" alt="">
+                            <p> {{disco.title}}</p>
+                            <p> {{disco.author}}</p>
+                            <p> {{disco.year}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-white ms_details">
+                    <div class="ms_info">
+                        <div class="text-end mb-3">
+                            <i class="fa-regular fa-rectangle-xmark fa-2x"></i>
+                        </div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quasi assumenda, iusto, facilis rem adipisci pariatur itaque mollitia quis possimus corrupti porro. Sint corrupti minima magnam quae, porro mollitia non?
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>
